@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     
     "login_user",
     "skill_form",
-    "roadmap_logic",
     "dashboard",]
 
 MIDDLEWARE = [
