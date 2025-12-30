@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skillpix Form</title>
+  <link rel="stylesheet" href="{% static 'css/form.css' %}">
+</head>
+
+<body>
+  <div class="form">
+    <form method="post" action="{% url 'skill_form:form' %}">
+      {% csrf_token %}
+
+      <p>
+        1. What degree you are pursuing?
+        <input type="text" name="degree" class="box" required>
+      </p>
+
+      <p>
+        2. Skills you want to learn?
+        <input type="text" name="skills" class="box" required>
+      </p>
+
+      <p>
+        3. Time duration ? <br>
+        <input type="checkbox" name="time_available" value="6 months"> 6 months<br>
+        <input type="checkbox" name="time_available" value="1 year"> 1 year<br>
+        <input type="checkbox" name="time_available" value="1.5 years"> 1.5 years<br>
+        <input type="checkbox" name="time_available" value="2 years"> 2 years<br>
+      </p>
+
+      <p>
+        4. End goal
+        <input type="text" name="end_goal" class="box" required>
+      </p>
+
+      <button type="submit">
+        Generate roadmap
+      </button>
+    </form>
+  </div>
+</body>
+
+</html>
