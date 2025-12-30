@@ -10,31 +10,50 @@
 </head>
 
 <body>
-  <div class="form">
+  <div class="background">
     <form method="post" action="{% url 'skill_form:form' %}">
       {% csrf_token %}
 
       <p>
         1. What degree you are pursuing?
         <input type="text" name="degree" class="box" required>
+        <small class="hint">Example: BSc Computer Science</small>
       </p>
 
       <p>
-        2. Skills you want to learn?
+        2. Skills you have?
         <input type="text" name="skills" class="box" required>
+        <small class="hint">Example: HTML CSS</small>
       </p>
 
       <p>
-        3. Time duration ? <br>
-        <input type="checkbox" name="time_available" value="6 months"> 6 months<br>
-        <input type="checkbox" name="time_available" value="1 year"> 1 year<br>
-        <input type="checkbox" name="time_available" value="1.5 years"> 1.5 years<br>
-        <input type="checkbox" name="time_available" value="2 years"> 2 years<br>
+        3. Time duration ? 
+        <div class="check">
+         <label>
+           <input type="radio" name="duration" value="6">
+           6 months
+         </label>
+
+         <label>
+           <input type="radio" name="duration" value="12">
+           1 year
+         </label>
+
+         <label>
+           <input type="radio" name="duration" value="24">
+            1.5 years
+         </label>
+         <label>
+           <input type="radio" name="duration" value="24">
+            2 years
+         </label>
+       </div>
       </p>
 
       <p>
         4. End goal
         <input type="text" name="end_goal" class="box" required>
+        <small class="hint">Example: UI/UX Designer , Software Engineer</small>
       </p>
 
       <button type="submit">

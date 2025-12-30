@@ -7,7 +7,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
+  margin: 50px 0 50px 0;
   font-family: "Press Start 2P", cursive;
 }
 
@@ -15,47 +15,83 @@ body {
 
 p {
   color: #ff9100;
-  font-size: 20px;
-  margin-bottom: 40px;
+  font-size: 19px;
+  margin: 40px 0 0 0;
 }
 
 
-.form {
-  background-color: rgba(2, 12, 33, 0.75);
-  padding: 26px;
-  border: 2px solid #ff9100;
-  box-shadow: 0 0 20px rgba(255, 145, 0, 0.3);
+.background {
+  background-color: rgba(1, 7, 18, 0.773);
+  padding: 0px 25px;
+  box-shadow: 0 0 5px #ff9100;
+  border-radius: 10px;
+  max-width: 800px;
 }
 
 
 
 button {
-  margin-left: 300px;
+  margin: 35px 0 35px 200px;
   background-color: #ff9100;
   color: black;
-  border: none;
   padding: 10px;
   border-radius: 4px;
   font-size: 24px;
+  font-weight: bold;
+  box-shadow: 0 0 5px rgb(247, 214, 152);
   font-family: "Press Start 2P", cursive;
+  border: none;
 }
 
 button:hover {
+  background: #ff9100;
   opacity: 0.7;
   cursor: pointer;
+  transform: scale(1.05);
 }
 
 
 
 .box {
+  position: relative;
+  width: 90%;
+  padding: 12px 10px;
+  margin-top: 12px;
+  margin-left: 35px;
+  margin-right: 15px;
   background: #000000;
-  border: 2px solid #ff9100;
+  outline: none;
+  border: 1px solid #ff9100;
   color: #ff9100;
-  height: 25px;
-  width: 200px;
+  border-radius: 6px;
   font-family: "Press Start 2P", cursive;
 }
 
-input[type="checkbox"] {
-  accent-color: #000000;
+input:focus {
+  box-shadow: 0 0 12px rgba(255,165,0,0.6);
+  border-color: rgb(247, 200, 9);
+}
+
+
+label{
+   color: #ff9100;
+   font-size: 14px;
+   cursor: pointer;
+   transition: 0.3s;
+   margin-left: 35px;
+}
+
+.check{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.para3{
+    margin-bottom: 15px;
+}
+
+.hint {
+  color: #bbb;
+  font-size: 12px;
+  margin-left: 35px;
 }
