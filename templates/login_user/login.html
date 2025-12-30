@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | SKILLPIX</title>
+
+  <!-- Django static CSS -->
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+
+  <!-- Title -->
+  <div class="container">
+    <h1>SKILLPIX</h1>
+  </div>
+
+  <!-- Login Box -->
+  <div class="login">
+
+    <!-- Django messages -->
+    {% if messages %}
+      <div class="messages">
+        {% for message in messages %}
+          <p class="message {{ message.tags }}">{{ message }}</p>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <!-- Login Form -->
+    <form method="post" autocomplete="off">
+  {% csrf_token %}
+
+  <!-- Autofill trap -->
+  <input type="text" name="fakeuser" style="display:none">
+  <input type="password" name="fakepass" style="display:none">
+
+  <input
+    type="text"
+    name="username"
+    placeholder="USERNAME"
+    autocomplete="off"
+    required
+  >
+
+  <div class="passwordbox">
+    <input
+      type="password"
+      name="password"
+      placeholder="PASSWORD"
+      autocomplete="new-password"
+      required
+    >
+    <span class="toggleeye" onclick="togglePassword(this)">SHOW</span>
+  </div>
+
+  <button type="submit">LOGIN</button>
+</form>
+
+
+    <!-- Links -->
+    <div class="switch">
+      <p>Don’t have an account?</p>
+      <a href="{% url 'login_user:register' %}">Register</a><br>
+      <a href="{% url 'login_user:forgot_password' %}">Forgot Password?</a>
+    </div>
+
+  </div>
+
+  <script>
+  function togglePassword(el) {
+    const input = el.previousElementSibling;
+    if (!input) return;
+
+    if (input.type === "password") {
+      input.type = "text";
+      el.innerText = "HIDE";
+    } else {
+      input.type = "password";
+      el.innerText = "SHOW";
+    }
+  }
+</script>   
+
+</body>
+</html>
