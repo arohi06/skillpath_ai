@@ -66,7 +66,7 @@
 
       {% if data.skills %}
       <div>
-        <strong>Skills required:</strong>
+        <strong>Skills You'll Learn:</strong>
         <ul>
           {% for skill in data.skills %}
           <li>{{ skill }}</li>
@@ -113,13 +113,6 @@
         <button class="button1" onclick="goToWelcome()">Back</button>
         {% endif %}
 
-        <!-- NEXT LEVEL -->
-        {% if not forloop.last %}
-        <button class="button1" onclick="openLevel('level_{{ forloop.counter|add:1 }}')">
-          Ready for more?
-        </button>
-        {% endif %}
-
         <!-- BACK TO PREVIOUS LEVEL -->
         {% if not forloop.first %}
         <button class="button1" onclick="openLevel('level_{{ forloop.counter|add:-1 }}')">
@@ -127,6 +120,15 @@
         </button>
         {% endif %}
 
+
+        <!-- NEXT LEVEL -->
+        {% if not forloop.last %}
+        <button class="button1" onclick="openLevel('level_{{ forloop.counter|add:1 }}')">
+          Ready for more?
+        </button>
+        {% endif %}
+
+        
 
         {% if forloop.last %}
         <button class="button1" onclick="goToWelcome()">welcome page</button>
