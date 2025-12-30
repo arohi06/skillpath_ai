@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+
+
+body {
+  background: url("../images/form.jpeg") no-repeat center center / cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  font-family: "Press Start 2P", cursive;
+}
+
+
+
+p {
+  color: #ff9100;
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+
+.form {
+  background-color: rgba(2, 12, 33, 0.75);
+  padding: 26px;
+  border: 2px solid #ff9100;
+  box-shadow: 0 0 20px rgba(255, 145, 0, 0.3);
+}
+
+
+
+button {
+  margin-left: 300px;
+  background-color: #ff9100;
+  color: black;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 24px;
+  font-family: "Press Start 2P", cursive;
+}
+
+button:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+
+
+.box {
+  background: #000000;
+  border: 2px solid #ff9100;
+  color: #ff9100;
+  height: 25px;
+  width: 200px;
+  font-family: "Press Start 2P", cursive;
+}
+
+input[type="checkbox"] {
+  accent-color: #000000;
+}
