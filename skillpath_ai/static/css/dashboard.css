@@ -13,10 +13,10 @@ body {
   background: url("../images/dashboard.jpeg") no-repeat center center/cover;
   display: flex;
   color: aliceblue;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: 'pixelFont', monospace;
+  font-size: 12px;
 }
 
-/*    'pixelFont',monospace; <- in font  family      */
 
 
 .dashboard {
