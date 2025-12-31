@@ -10,8 +10,7 @@
 </head>
 
 <body>
-
-  <!-- ================= WELCOME / DASHBOARD ================= -->
+  
   <div class="dashboard" id="welcomePage">
     <h2> Welcome to the Pixie Forest! </h2>
     <hr>
@@ -25,31 +24,61 @@
     </h3>
 
 
-    {% if roadmap and not roadmap.error %}
+    {% if True%}
     <div class="button">
       <button class="button1" onclick="openLevel('level_1')">
         Ready to Level Up?
       </button>
     </div>
     {% endif %}
+    <br><br>
+     <div class="modal-buttons">
 
-  </div>
+    <a href="{% url 'skill_form:form' %}"
+   class="icon-btn tooltip"
+   aria-label="Edit Skills">
 
-  <!-- ===== LOGIN AND EDIT SKILL ACTIONS ===== -->
-  <div class="modal-buttons">
+  
+  <svg xmlns="http://www.w3.org/2000/svg"
+       fill="none"
+       viewBox="0 0 24 24"
+       stroke-width="1.5"
+       stroke="currentColor"
+       class="icon">
+    <path stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l9.932-9.931z" />
+  </svg>
 
-    <a href="{% url 'skill_form:form' %}">
-      <button class="button1">Edit Skills</button>
-    </a>
+  <span class="tooltip-text">Edit Skills</span>
+</a>
 
     
-    <a href="{% url 'login_user:login' %}">
-      <button class="button1">Logout</button>
+    <a href="{% url 'login_user:login' %}" class="icon-btn tooltip" aria-label="Logout">
+     
+  
+  <svg xmlns="http://www.w3.org/2000/svg" 
+       fill="none" 
+       viewBox="0 0 24 24" 
+       stroke-width="2" 
+       stroke="currentColor" 
+       class="icon">
+    <path stroke-linecap="round" stroke-linejoin="round"
+      d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6A2.25 2.25 0 005.25 5.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15" />
+    <path stroke-linecap="round" stroke-linejoin="round"
+      d="M12 9l3 3m0 0l-3 3m3-3H3" />
+  </svg>
+
+  <span class="tooltip-text">Logout</span>
+
+
     </a>
 
   </div>
 
-  <!-- ================= LEVEL MODALS ================= -->
+
+
+
 
   {% if roadmap and not roadmap.error %}
   {% for level, data in roadmap.items %}
@@ -105,23 +134,24 @@
       <p><strong>Outcome:</strong><br>{{ data.outcome }}</p>
       {% endif %}
 
-      <!-- ================= NAV BUTTONS ================= -->
+
+      
       <div class="modal-buttons">
 
-        <!-- BACK TO WELCOME (LEVEL 1 ONLY) -->
+        
         {% if forloop.first %}
         <button class="button1" onclick="goToWelcome()">Back</button>
         {% endif %}
 
-        <!-- BACK TO PREVIOUS LEVEL -->
+        
         {% if not forloop.first %}
         <button class="button1" onclick="openLevel('level_{{ forloop.counter|add:-1 }}')">
-          back
+          Back
         </button>
         {% endif %}
 
 
-        <!-- NEXT LEVEL -->
+        
         {% if not forloop.last %}
         <button class="button1" onclick="openLevel('level_{{ forloop.counter|add:1 }}')">
           Ready for more?
@@ -131,7 +161,7 @@
         
 
         {% if forloop.last %}
-        <button class="button1" onclick="goToWelcome()">welcome page</button>
+        <button class="button1" onclick="goToWelcome()">Welcome page</button>
         {% endif %}
 
       </div>
@@ -141,7 +171,7 @@
   {% endfor %}
   {% endif %}
 
-  <!-- ================= JS ================= -->
+  
   <script>
     function openLevel(levelId) {
       document.querySelectorAll('.pixel-modal')

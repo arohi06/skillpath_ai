@@ -22,23 +22,23 @@
     </div>
     {% endif %}
 
-    <!-- 🔒 Autofill blockers -->
+    
     <form method="post" autocomplete="off">
       {% csrf_token %}
 
-      <!-- Fake fields to trap Chrome autofill -->
+      
       <input type="text" name="fakeuser" style="display:none">
       <input type="password" name="fakepass" style="display:none">
 
       <input type="text" name="username" placeholder="USERNAME" autocomplete="off" required>
 
-      <!-- PASSWORD -->
+      
       <div class="passwordbox">
         <input type="password" name="password" placeholder="PASSWORD" autocomplete="new-password" required>
         <span class="toggleeye" onclick="togglePassword(this)">SHOW</span>
       </div>
 
-      <!-- CONFIRM PASSWORD -->
+  
       <div class="passwordbox">
         <input type="password" name="confirm_password" placeholder="CONFIRM PASSWORD" autocomplete="new-password"
           required>
@@ -54,7 +54,7 @@
     </p>
   </div>
 
-  <!-- SAME JS AS LOGIN -->
+  
   <script>
     function togglePassword(el) {
       const input = el.previousElementSibling;

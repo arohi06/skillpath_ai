@@ -1,4 +1,3 @@
-
 * {
   box-sizing: border-box;
 }
@@ -24,7 +23,7 @@ body {
   bottom: 30px;
   left: 65%;
   width: 380px;
-  height: 450px;
+  height: 470px;
   background-color: rgba(5, 36, 98, 0.744);
   border: 2px solid rgba(255, 200, 120, 0.6);
   border-radius: 12px;
@@ -127,9 +126,9 @@ button:hover {
   width: 80%;
   max-width: 420px;
   height: 80%;
-  overflow-y: auto;      /* 🔥 CRITICAL */
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  overflow-y: auto;      
+  -ms-overflow-style: none;  
+  scrollbar-width: none; 
   scroll-behavior: smooth;
   padding: 16px;
   text-align: center;
@@ -186,11 +185,53 @@ p {
 .modal-buttons {
   display: flex;
   justify-content: center;
-  gap: 12px;
+  gap: 45px;
   margin-top: 20px;
   flex-wrap: wrap;
 }
 
-.modal-buttons button {
-  transform: none !important; 
+
+.icon-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+}
+
+
+.icon {
+  width: 30px;
+  height: 30px;
+  color: #ffb000;
+}
+
+.icon-btn:hover .icon {
+  color: #ffd36a;
+}
+
+.tooltip-text {
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.85);
+  color: #ffb000;
+  padding: 6px 8px;
+  font-size: 11px;
+  font-family: 'Press Start 2P', monospace;
+  border-radius: 4px;
+  white-space: nowrap;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.icon-btn:hover .tooltip-text {
+  opacity: 1;
+}
+
+.icon-btn:hover .icon {
+  filter: drop-shadow(0 0 6px #ffb000);
 }
