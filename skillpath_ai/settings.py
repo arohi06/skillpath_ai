@@ -30,7 +30,11 @@ SECRET_KEY = os.getenv('DJANGO_SECRET', 'fallback-secret')
 DEBUG = os.getenv('DEBUG', 'True') == 'True'
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "skillpix-ai-p8rj.onrender.com",
+    "localhost",
+    "127.0.0.1",
+]
 
 
 # Application definition
