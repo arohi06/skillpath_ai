@@ -36,6 +36,10 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://skillpix-ai-p8rj.onrender.com",
+]
+
 
 # Application definition
 
